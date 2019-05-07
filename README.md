@@ -7,6 +7,7 @@ Steps to get up and running:
      - change directory into the "src" folder
      - create virtual environment and start it
      - pip install -r requirements.txt
+  - Change name of folder from "BoT-django-skeleton" to whatever you would like
   - Change name of project from "project" in the following areas to whatever you would like the project to be called:
   
      settings.py:
