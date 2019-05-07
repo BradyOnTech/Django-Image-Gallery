@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.core.files.base import ContentFile
 from django.db import models
+from django.template.defaultfilters import slugify
 import gallery.settings
 import zipfile
 from PIL import Image
@@ -24,16 +25,14 @@ class AlbumAdmin(admin.ModelAdmin):
            
             file = zipfile.ZipFile(form.cleaned_data['file'])
             for image in sorted(file.namelist()):
-                print(image)
                 data = file.read(image)
                 contentFile = ContentFile(data)
 
                 img = AlbumImage()
                 img.album = album
-                
-                for i in sorted(file.namelist()):
-                    img.name = '{0}-{1}.jpg'.format(album.slug, i)
-                    name = img.name
+                img.name = image
+                name = img.name
+                img.slug = slugify(name)
                 img.image.save(name, contentFile)
 
                 path = '{0}/albums/{1}'.format(gallery.settings.MEDIA_ROOT, name)
@@ -48,7 +47,7 @@ class AlbumAdmin(admin.ModelAdmin):
 class AlbumImageModelAdmin(admin.ModelAdmin):
     list_display = ('name', 'album', 'created')
     list_filter = ('name', 'album', 'created')
-
+    prepopulated_fields = {'slug': ('name',)}
 
 admin.site.register(Album,AlbumAdmin)
 admin.site.register(AlbumImage,AlbumImageModelAdmin)
