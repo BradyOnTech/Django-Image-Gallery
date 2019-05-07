@@ -9,9 +9,11 @@ Steps to get up and running:
      - pip install -r requirements.txt
      - change name of project from "project" in the following areas to whatever you would like the project to be called:
      settings.py:
-         - ROOT_URLCONF = 'project.urls'
-         - WSGI_APPLICATION = 'project.wsgi.application'
+     - ROOT_URLCONF = 'project.urls'
+     - WSGI_APPLICATION = 'project.wsgi.application'
+     
      wsgi.py
-         - os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'project.settings')
+     - os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'project.settings')
+     
      manage.py
-         - os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'project.settings')
+     - os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'project.settings')
