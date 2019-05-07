@@ -8,15 +8,16 @@ Steps to get up and running:
      - create virtual environment and start it
      - pip install -r requirements.txt
   - Change name of project from "project" in the following areas to whatever you would like the project to be called:
+  
      settings.py:
-     - ROOT_URLCONF = 'project.urls'
-     - WSGI_APPLICATION = 'project.wsgi.application'
+     - ROOT_URLCONF = '<strong>project</strong>.urls'
+     - WSGI_APPLICATION = '<strong>project</strong>.wsgi.application'
      
      wsgi.py
-     - os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'project.settings')
+     - os.environ.setdefault('DJANGO_SETTINGS_MODULE', '<strong>project</strong>.settings')
      
      manage.py
-     - os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'project.settings')
+     - os.environ.setdefault('DJANGO_SETTINGS_MODULE', '<strong>project</strong>.settings')
      
  - Update .env file in the "src" folder directory
    - Change secret key value by generating a new one with the following:
