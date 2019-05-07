@@ -26,3 +26,6 @@ Steps to get up and running:
    - enter "from django.core.management.utils import get_random_secret_key"
    - enter "get_random_secret_key()"
    - copy given secret key into .env file without the leading and following quotes
+   
+ - To remove this repo as the remote origin:
+   - git remote remove origin
