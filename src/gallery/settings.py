@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'app',
+    'imagekit',
 ]
 
 MIDDLEWARE = [
@@ -82,25 +84,25 @@ WSGI_APPLICATION = 'gallery.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 # SQLite3
    #For local work
-DATABASES = {
-   'default': {
-       'ENGINE': 'django.db.backends.sqlite3',
-       'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-   }
-}
+#DATABASES = {
+#   'default': {
+#       'ENGINE': 'django.db.backends.sqlite3',
+#       'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#   }
+#}
 
 # PostgreSQL Database
    #For local & production
-# DATABASES = {
-#     'default': {
-# 	'ENGINE': config('DB_ENGINE'),
-# 	'NAME': config('DB_NAME'),
-# 	'USER': config('DB_USER'),
-# 	'PASSWORD': config('DB_PASS'),
-# 	'HOST': config('DB_HOST'),
-# 	'PORT': config('DB_PORT'),
-#     }
-# }
+DATABASES = {
+    'default': {
+	'ENGINE': config('DB_ENGINE'),
+	'NAME': config('DB_NAME'),
+	'USER': config('DB_USER'),
+	'PASSWORD': config('DB_PASS'),
+	'HOST': config('DB_HOST'),
+	'PORT': config('DB_PORT'),
+    }
+}
 
 
 # Password validation
