@@ -2,7 +2,7 @@
 A Django skeleton to make setting up a new project quicker
 
 Steps to get up and running:
- - Clone repo into local folder (git clone https://github.com/BradyOnTech/BoT-django-skeleton.git)
+ - Clone repo into local folder (git clone https://github.com/BradyOnTech/django_skeleton.git)
  - Open command line and do the following:
      - change directory into the "src" folder
      - create virtual environment and start it
