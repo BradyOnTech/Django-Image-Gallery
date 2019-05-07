@@ -19,9 +19,9 @@ Steps to get up and running:
      manage.py
      - os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'project.settings')
      
-     - Update .env file in the "src" folder directory
-      - Change secret key value by generating a new one with the following:
-       - enter "python" in command line to enter python terminal
-       - enter "from django.core.management.utils import get_random_secret_key"
-       - enter "get_random_secret_key()"
-       - copy given secret key into .env file without the leading and following quotes
+ - Update .env file in the "src" folder directory
+  - Change secret key value by generating a new one with the following:
+  - enter "python" in command line to enter python terminal
+  - enter "from django.core.management.utils import get_random_secret_key"
+  - enter "get_random_secret_key()"
+  - copy given secret key into .env file without the leading and following quotes
