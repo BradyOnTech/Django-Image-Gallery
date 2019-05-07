@@ -1,4 +1,4 @@
-# BoT-django-skeleton
+# django-skeleton
 A Django skeleton to make setting up a new project quicker
 
 Steps to get up and running:
