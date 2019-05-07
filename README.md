@@ -7,8 +7,7 @@ Steps to get up and running:
      - change directory into the "src" folder
      - create virtual environment and start it
      - pip install -r requirements.txt
-     - change name of project from "project" in the following areas to whatever you would like the project to be called:
-     
+  - Change name of project from "project" in the following areas to whatever you would like the project to be called:
      settings.py:
      - ROOT_URLCONF = 'project.urls'
      - WSGI_APPLICATION = 'project.wsgi.application'
