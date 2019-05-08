@@ -1,0 +1,58 @@
+{% extends "app/base.html" %}
+{% load static %}
+
+{% block title %}Panda Outdoors{% endblock %}
+
+{% block content %}
+    <header style="background-image: url( {% static 'img/header-1.jpg' %} );">
+        <!-- the header img -->
+    </header>
+    <div id="nav-container">
+        <nav class="main-nav">
+            <ul class="nav-bar">
+                <li class="nav-option">Home</li>
+                <li class="nav-option">Gallery</li>
+                <li class="nav-option">About Our Trip</li>
+            </ul>
+        </nav>
+    </div>
+    <!-- intro-section -->
+    <section id="intro-section">
+        <h1>Welcome to our adventure page!</h1>
+        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquet erat nisl, ut porta felis rutrum at. Curabitur blandit fringilla sollicitudin. Duis enim metus, tempor eget metus ac, faucibus rutrum turpis. Sed rhoncus blandit vestibulum. Etiam et blandit massa. Fusce ac imperdiet orci. Aenean tortor nisl, congue at magna a, tristique faucibus ante.</h3>
+    </section>
+
+    <!-- preview-gallery -->
+    <section id="preview-gallery">
+        <h2 class="preview-gallery-header"><a href="#">See where we've been!</a></h2>
+        <div class="flex-container">
+            {% for album in top_albums %}
+                <a href="{{ album.get_absolute_url }}">
+                    <figure class="gallery-img">
+                        <img src="{{ album.thumb.url }}" alt="nature image">
+                        <span class="preview-img-text" href="#">{{ album.location }}</span>
+                    </figure>
+                </a>
+            {% endfor %}
+        </div>
+
+        <div class="flex-container2">
+            {% for album in bottom_albums %}
+                <!-- <a href="{{ album.get_absolute_url }}"> -->
+                    {% if forloop.counter == 1 %}
+                        <figure id="pic4" class="gallery-img">
+                    {% else %}
+                        <figure id="pic5" class="gallery-img">
+                    {% endif %}
+                        <img src="{{ album.thumb.url }}" alt="nature image">
+                        <span class="preview-img-text" href="#">{{ album.location }}</span>
+                    </figure>
+                <!-- </a> -->
+            {% endfor %}
+        </div>
+        <h3 class="preview-gallery-header-small">Check out our other <a href="#">destinations</a>!</h3>
+    </section>
+
+    {% include "app/includes/footer.html" %}
+
+{% endblock %}

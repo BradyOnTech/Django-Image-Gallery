@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from django.urls import reverse
 from imagekit.models import ProcessedImageField
 from imagekit.processors import ResizeToFit
 
@@ -12,13 +13,17 @@ class Album(models.Model):
     created = models.DateField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     slug = models.SlugField(max_length=100, unique=True)
-    file = models.FileField()
+    display = models.BooleanField(default=False)
+    location = models.CharField(max_length=200)
 
     class Meta:
         ordering = ('-published_date',)
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('app:album', args=[self.slug])
 
 class AlbumImage(models.Model):
     name = models.CharField(max_length=100)

@@ -1,0 +1,12 @@
+{% extends "app/base.html" %}
+{% load static %}
+
+{% block title %}Panda Outdoors{% endblock %}
+
+{% block content %}
+    {% for img in images %}
+        <img src="{{ img.thumb.url }}" class="card-image">
+        <!-- <img src="{{ img.thumb.url }}"> -->
+    {% endfor %}
+
+{% endblock %}

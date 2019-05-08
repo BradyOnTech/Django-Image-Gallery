@@ -1,0 +1,256 @@
+.card-image {
+    width:300px;
+    height:225px;
+}
+
+/* link color: #0000ee */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+} 
+
+html {
+    box-sizing: inherit;
+    font-size: 62.5%;
+    text-rendering: optimizeLegibility;
+    font-family: 'Open Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+h1 {
+    font-family: 'Fira Mono', monospace;
+    font-weight: 400;
+    font-size: 3.2rem;
+}
+
+/* ----------HEADER---------- */
+/* linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), */
+header {
+    /* background-image: url(img/header-1.jpg); */
+    height: 50vh;
+    width: 100vw;
+    background-position: bottom center;
+    background-size: cover;
+}
+
+/* #header-title {
+    font-family: 'Fira Mono', monospace;
+    font-weight: 400;
+    font-size: 3.3rem;
+    text-align: center;
+    position: absolute;
+    width: 1140px;
+    color:#fff;
+    top: 25%;
+    left: 50%;
+    transform: translate(-75%,0%);
+} */
+
+/* ----------MAIN NAV BAR---------- */
+
+#nav-container {
+    display: flex;
+    font-family: 'Fira Mono', monospace;
+    font-size: 1.5rem;
+}
+
+.main-nav {
+    background: rgb(233, 230, 230);
+    top: 0;
+    width: 100%;
+    transition: all 0.5s;
+    position: relative;
+    z-index: 1;
+}
+
+.nav-bar {
+    display: flex;
+    list-style: none;
+    font-weight: 400;
+    color: #000;
+    margin-top: 15px;
+    padding-bottom: 10px;
+}
+
+.nav-option {
+    flex: 1;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fixed-nav .main-nav {
+    position: fixed;
+    box-shadow: 0 5px rgba(0,0,0,0.1); 
+    /*this wors but as soon as we scroll past the nav bar the content jumps up, this happens because as soon as the nav bar becomes fixed it no longer takes up space in the document(floats on top of browser) causing a reflow on the page.*/
+    /*need to offset that jump*/
+  
+  }
+/* ----------SECTION 1 INTRO---------- */
+
+#intro-section h1 {
+    text-align: center;
+    margin-top: 50px;
+    font-weight: 400;
+}
+
+#intro-section h3 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-align: left;
+    margin: 4rem 10rem 8rem 10rem;
+    
+}
+
+/* ----------SECTION 2 PREVIEW GALLERY---------- */
+
+#preview-gallery {
+    background-color: beige;
+    padding-bottom: 3rem;
+    /* margin-bottom: 10rem; */
+}
+
+.preview-gallery-header {
+    font-family: 'Fira Mono', monospace;
+    font-weight: 400;
+    font-size: 2.5rem;
+    padding-top: 3rem;
+    text-align: center;
+}
+
+.preview-gallery-header-small {
+    font-family: 'Fira Mono', monospace;
+    font-weight: 400;
+    font-size: 1.75rem;
+    padding-top: 3rem;
+    text-align: center;
+}
+
+.preview-gallery-header a,
+.preview-gallery-header a:active,
+.preview-gallery-header a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+.preview-gallery-header-small a,
+.preview-gallery-header-small a:active,
+.preview-gallery-header-small a:visited {
+    color: #0000ee;
+}
+
+.flex-container {
+    display: flex;
+    width: 80%;
+    padding-top: 3rem; 
+    margin-left: 10%;
+    justify-content: center;
+}
+
+.flex-container2 {
+    display: grid;
+    grid-template-areas: "pic4 pic5";
+    margin-top: 1.8rem;
+}
+
+.gallery-img {
+    height: 25rem;
+    width: 30rem;
+    overflow: hidden;
+    position: relative;
+    margin-right: 1.8rem;
+}
+
+.gallery-img:hover {
+    transition: transform .4s;
+    transform: scale(1.1);
+}
+/* translateZ(0) perspective(1px)*/
+
+.gallery-img img {
+    height: 100%;
+    width: 100%;
+}
+
+.preview-img-text{
+    text-decoration: none;
+}
+
+.gallery-img .preview-img-text {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Black see-through */ 
+    width: 100%;
+    transition: .5s ease-out;
+    opacity:0;
+    color: white;
+    font-size: 1.5rem;
+    padding: 2rem;
+    text-align: center;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+    /* -webkit-font-smoothing: subpixel-antialiased; */
+    -webkit-filter: blur(.0px);
+}
+
+.gallery-img:hover .preview-img-text {
+    font-family: 'Open Sans', sans-serif; 
+    opacity: 1;
+}
+
+#pic4 {
+    grid-area: pic4;
+    justify-self: end;
+}
+#pic5 {grid-area: pic5;}
+
+/* ----------footer---------- */
+#footer-container {
+    display: flex;
+    background: rgb(233, 230, 230);
+    font-family: 'Fira Mono', monospace;
+    padding-top: 3rem;
+}
+
+.footer1 {
+    display: flex;
+    list-style: none;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #000;
+    padding-bottom: 2rem;
+}
+
+.footer-list-items {
+    display: flex;
+    flex: 1; 
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: .5rem;
+    margin-left: 5rem;
+}
+
+.footer-list-items a{
+    text-decoration: none;
+    color: black;
+}
+
+.footer_item_1 {
+    flex: .5; 
+}
+
+#copy-right {
+    display: flex;
+    float: right;
+    font-size: 1.1rem;
+    text-align: right;
+    margin-left: 70rem;
+}
